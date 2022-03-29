@@ -64,6 +64,8 @@ class products extends Controller
         $Od_date = $_GET['Od_date'];
         $Do_date = $_GET['Do_date'];
 
+        // selekcja  dla wyszukiwania danych
+
         $sql = "SELECT grupy_produktow.nazwa,
             zamowienia.data, 
         SUM(produkty.cena_netto * zamowienia.ilosc) AS 'cena_netto', 
@@ -112,6 +114,10 @@ class products extends Controller
         $Od_date = $_GET['Od_date'];
         $Do_date = $_GET['Do_date'];
 
+
+        // selekcja  dla exportu danych
+
+
         $sql = "SELECT grupy_produktow.nazwa,
             zamowienia.data, 
         SUM(produkty.cena_netto * zamowienia.ilosc) AS 'cena_netto', 
@@ -141,6 +147,9 @@ class products extends Controller
         INNER JOIN zamowienia ON zamowienia.id_produkt = produkty.id
         GROUP BY YEAR(zamowienia.data), grupy_produktow.nazwa ORDER BY zamowienia.data, grupy_produktow.nazwa ASC;"));
         
+
+        // Selekcja każdej kategorii towaru w latach
+
         $sql1 = "SELECT Year(zamowienia.data), SUM(produkty.cena_netto * zamowienia.ilosc) AS 'cena_netto', SUM(produkty.cena_netto * zamowienia.ilosc/77 * 100) AS 'cena_brutto' FROM grupy_produktow INNER JOIN produkty ON produkty.id_grupa = grupy_produktow.id INNER JOIN zamowienia ON zamowienia.id_produkt = produkty.id WHERE grupy_produktow.nazwa = 'Książki' GROUP BY YEAR(zamowienia.data);";
         $sql2 = "SELECT Year(zamowienia.data), SUM(produkty.cena_netto * zamowienia.ilosc) AS 'cena_netto', SUM(produkty.cena_netto * zamowienia.ilosc/77 * 100) AS 'cena_brutto' FROM grupy_produktow INNER JOIN produkty ON produkty.id_grupa = grupy_produktow.id INNER JOIN zamowienia ON zamowienia.id_produkt = produkty.id WHERE grupy_produktow.nazwa = 'Środki czystości' GROUP BY YEAR(zamowienia.data);";
         $sql3 = "SELECT Year(zamowienia.data), SUM(produkty.cena_netto * zamowienia.ilosc) AS 'cena_netto', SUM(produkty.cena_netto * zamowienia.ilosc/77 * 100) AS 'cena_brutto' FROM grupy_produktow INNER JOIN produkty ON produkty.id_grupa = grupy_produktow.id INNER JOIN zamowienia ON zamowienia.id_produkt = produkty.id WHERE grupy_produktow.nazwa = 'Pieczywo' GROUP BY YEAR(zamowienia.data);";

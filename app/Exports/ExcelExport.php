@@ -16,7 +16,7 @@ class ExcelExport implements FromView
         $this->stats = $stats;
         $this->sumNetto = $sumNetto;
     }
-    
+    // Export z bibliotecy 
     public function view(): view
     {
         return view('selected', [
