@@ -50,6 +50,9 @@
                     <a href="/table"><h3 style="color: red;">Tabela zamówień i selekcja /</h3></a>
                     <a href="/years"><h3 style="color: red;">Tabela roczna</h3></a>
                 </div>
+                <form action="/php.php" method="POST">
+                    <input type="text" valu>
+                </form>
             </div>
         </div>
     </body>
