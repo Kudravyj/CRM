@@ -1,6 +1,6 @@
-Cześć, to moje pierwsze zadanie 
+Hello 
+It was just my task for rektruitment for one.
+My task was to view the database and filter it by custom data from clients, also I had to use Api to make statictic bar.
+Nothing special.
 
-Nie powiem, że zrobiłem jego w cale dobrze bo była potrzebna dobra architektura ale na to nie ma czasu i 
-uwogule na te zadania było ekstremalnie mało czasu, dlatego jak coś to proszę pytać
-
-Ja wykorzystałem Laravel i sqlite, też zużyłem kilka bibliotek dla exportu danych i dla statystyk
+For project I used: -Laravel -Rest API -one controller a little bit of js,  -Node js and other tools
